@@ -6,17 +6,19 @@ import { AppComponent } from './app.component';
 import { InvoicingModule } from './invoicing/invoicing.module';
 import { HeroModule } from './hero/hero.module';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     InvoicingModule,
     HeroModule,
+    CustomerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
