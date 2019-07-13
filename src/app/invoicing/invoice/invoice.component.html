@@ -3,17 +3,60 @@
   <app-invoice-summary [summary]=invoiceSummary></app-invoice-summary>
 </div>
 <div class="customer-select">
-  <select id="allCustomers" [(ngModel)]="c" class="form-control" required placeholder = "aaa">
-    <option *ngFor="let c of allCustomers" [ngValue]="c" selected>
-      {{ c.name }}
+  <h5>Select Customer:</h5>
+  <select id="allCustomers" [(ngModel)]="customer" class="form-control" required>
+    <option *ngFor="let customer of allCustomers" [ngValue]="customer" selected>
+      {{ customer.name }}
     </option>
   </select>
-  
-  <div *ngIf="c !== undefined">
-      <h1>{{c.name }}{{c.dateCreated}}</h1>
-  </div>
-  
-  
+</div>
 
+<div class="customer-detail" *ngIf="customer !== undefined">
+  <h2>{{customer.name }}</h2>
+    <table>
+      <tr>
+        <td>
+          NIP:
+        </td>
+        <td>
+          735-222-23-34
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Street:
+        </td>
+        <td>
+          StreetName 33
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Post code:
+        </td>
+        <td>
+          33-333
+        </td>
+      </tr>
+      <tr>
+        <td>
+          City:
+        </td>
+        <td>
+          Cracow
+        </td>
+      </tr>
+      <tr>
+        <td>
+          CCountry:
+        </td>
+        <td>
+          Poland
+        </td>
+      </tr>
+
+    </table>
+    
+    
 </div>
 
