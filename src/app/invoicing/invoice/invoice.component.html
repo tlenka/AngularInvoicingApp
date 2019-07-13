@@ -2,3 +2,14 @@
   <app-invoice-positions [positions]=invoice.items (itemsChanged)=updateItems($event)></app-invoice-positions>
   <app-invoice-summary [summary]=invoiceSummary></app-invoice-summary>
 </div>
+<div>
+  <select id="allCustomers" [(ngModel)]="c" class="create-user-select-half" required>
+    <option *ngFor="let c of allCustomers" [ngValue]="c">
+      {{ c.name }}
+    </option>
+  </select>
+  
+  <h1>{{c.name }}{{c.dateCreated}}</h1>
+
+</div>
+

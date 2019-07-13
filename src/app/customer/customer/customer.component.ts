@@ -35,7 +35,7 @@ export class CustomerComponent implements OnInit {
   }
 
   saveCustomer(customer: CustomerModel): void {
-    //this.newCustomer = new CustomerModel(this.newCustomer.name);
+    this.newCustomer = new CustomerModel();
     this.customerService.addCustomerToArray(customer);
     alert(customer.name);
   }

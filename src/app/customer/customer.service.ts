@@ -8,7 +8,7 @@ export class CustomerService {
 
     constructor() { }
  
-    getAllCustomers(): CustomerModel[] {
+  getAllCustomers(): CustomerModel[] {
     return CUSTOMERS;
   }
 

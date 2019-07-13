@@ -16,7 +16,7 @@ import { InvoiceSummaryComponent } from './invoice-summary/invoice-summary.compo
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [InvoiceComponent],
   providers: [

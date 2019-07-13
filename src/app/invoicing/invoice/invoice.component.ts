@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Invoice, InvoiceSummary } from '../model/item';
+import { CustomerService } from 'src/app/customer/customer.service';
 
 @Component({
   selector: 'app-invoice',
@@ -10,8 +11,9 @@ export class InvoiceComponent implements OnInit {
 
   invoice: Invoice;
   invoiceSummary: InvoiceSummary;
+  allCustomers: any[];
 
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
     this.invoice = {
@@ -20,6 +22,7 @@ export class InvoiceComponent implements OnInit {
     }
 
     this.invoiceSummary = this.recalculateSummery(this.invoice);
+    this.allCustomers = this.customerService.getAllCustomers();
   }
 
   recalculateSummery(invoice: Invoice): InvoiceSummary {
@@ -41,4 +44,5 @@ export class InvoiceComponent implements OnInit {
   updateItems(items) {
     this.invoiceSummary = this.recalculateSummery(this.invoice);
   }
+
 }
