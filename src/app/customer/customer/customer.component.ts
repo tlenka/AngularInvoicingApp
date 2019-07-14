@@ -14,10 +14,6 @@ export class CustomerComponent implements OnInit {
 
   onSubmit() { this.submitted = true; }
 
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.newCustomer); }
-
-  //public name: string;
   allCustomers: CustomerModel[];
   countries: String[];
   
@@ -32,8 +28,6 @@ export class CustomerComponent implements OnInit {
   ngOnInit() {
     this.setAllCustomers();
     this.countries = COUNTRIES;
-    
-    
   }
 
   setAllCustomers(): void {
