@@ -20,6 +20,9 @@ export class CustomerComponent implements OnInit {
   //public name: string;
   allCustomers: CustomerModel[];
   countries: String[];
+  
+  customerNipPattern = "[0-9]{10}"; 
+  customerPostCodePattern = "[0-9]{2}-[0-9]{3}"
 
   @Input()
   private newCustomer: CustomerModel = new CustomerModel();
@@ -29,6 +32,7 @@ export class CustomerComponent implements OnInit {
   ngOnInit() {
     this.setAllCustomers();
     this.countries = COUNTRIES;
+    
     
   }
 

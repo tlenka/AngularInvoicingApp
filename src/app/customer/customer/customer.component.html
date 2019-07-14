@@ -20,16 +20,22 @@
       <td>
           <div class="form-group">
               <input type="text" class="form-control" id="name" required
-              [(ngModel)]="newCustomer.name" name="name"
+              [(ngModel)]="newCustomer.name" name="name" 
               />
           </div>
       </td>
       <td>
           <div class="form-group">
               <input type="number" class="form-control" id="nip" required
-              [(ngModel)]="newCustomer.nip" name="nip"
+              [(ngModel)]="newCustomer.nip" name="nip" [pattern]="customerNipPattern" #customerNip="ngModel"
               />
           </div>
+          <div class="format-tip"> 
+              Nip format: 0000000000
+          </div> 
+          <div *ngIf="customerNip.errors?.pattern" class="format-alert"> 
+              Nip is not valid.
+           </div> 
       </td>
       <td>
           <div class="form-group">
@@ -41,9 +47,15 @@
       <td>
           <div class="form-group">
               <input type="text" class="form-control" id="postCode" required
-              [(ngModel)]="newCustomer.postCode" name="postCode"
+              [(ngModel)]="newCustomer.postCode" name="postCode" [pattern]="customerPostCodePattern" #customerPostCode="ngModel"
               />
           </div>
+          <div class="format-tip"> 
+              Post code format: 00-000
+          </div> 
+          <div *ngIf="customerPostCode.errors?.pattern" class="format-alert"> 
+              Post code is not valid.
+           </div> 
       </td>
       <td>
           <div class="form-group">
@@ -72,6 +84,7 @@
 </div>
 
 </form>
+
 
 
 <div class="all-customers">
