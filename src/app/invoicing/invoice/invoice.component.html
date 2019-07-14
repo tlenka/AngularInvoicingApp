@@ -2,6 +2,7 @@
   <app-invoice-positions [positions]=invoice.items (itemsChanged)=updateItems($event)></app-invoice-positions>
   <app-invoice-summary [summary]=invoiceSummary></app-invoice-summary>
 </div>
+
 <div class="customer-select">
   <h5>Select Customer:</h5>
   <select id="allCustomers" [(ngModel)]="customer" class="form-control" required>
@@ -19,7 +20,7 @@
           NIP:
         </td>
         <td>
-          735-222-23-34
+          {{ customer.nip }}
         </td>
       </tr>
       <tr>
@@ -27,7 +28,7 @@
           Street:
         </td>
         <td>
-          StreetName 33
+          {{ customer.street}}
         </td>
       </tr>
       <tr>
@@ -35,7 +36,7 @@
           Post code:
         </td>
         <td>
-          33-333
+          {{ customer.postCode }}
         </td>
       </tr>
       <tr>
@@ -43,17 +44,25 @@
           City:
         </td>
         <td>
-          Cracow
+          {{ customer.city }}
         </td>
       </tr>
       <tr>
         <td>
-          CCountry:
+          Country:
         </td>
         <td>
-          Poland
+          {{ customer.country }}
         </td>
       </tr>
+      <tr>
+          <td>
+            Date created:
+          </td>
+          <td>
+            {{ customer.dateCreated | date: 'dd/MM/yyyy' }}
+          </td>
+        </tr>
 
     </table>
     

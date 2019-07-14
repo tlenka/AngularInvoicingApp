@@ -8,7 +8,7 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
 @NgModule({
   declarations: [
     CustomerComponent,
-  //  CustomerDetailComponent
+    CustomerDetailComponent
   ],
   imports: [
     CommonModule,
