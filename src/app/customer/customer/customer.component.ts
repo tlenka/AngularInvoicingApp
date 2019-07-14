@@ -41,9 +41,17 @@ export class CustomerComponent implements OnInit {
   }
 
   saveCustomer(customer: CustomerModel): void {
-    this.newCustomer = new CustomerModel();
-    this.customerService.addCustomerToArray(customer);
-    alert(customer.name);
+    if(this.customerService.IsCustomerNameExist(customer.name)){
+      alert("It's looking this name is exist.");
+    }
+    else if(this.customerService.IsCustomerNipExist(customer.nip)){
+      alert("It's looking this nip is exist.");
+    }
+    else{
+      this.newCustomer = new CustomerModel();
+      this.customerService.addCustomerToArray(customer);
+      alert("Customer: "+ customer.name + " was succesfully added.")
+    }
   }
 
 }

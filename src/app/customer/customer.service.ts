@@ -17,5 +17,31 @@ export class CustomerService {
     CUSTOMERS.push(customer);
   }
 
-    
+  IsCustomerNameExist(newCustomerName: String): boolean{
+    let exist: boolean;
+    CUSTOMERS.forEach(function (customer) {
+     
+      if(newCustomerName == customer.name){
+        exist = true;
+      }
+      else{
+        exist = false;
+      }
+    });
+    return exist;
+  }
+
+  IsCustomerNipExist(newCustomerNip: String): boolean{
+    let exist: boolean;
+    CUSTOMERS.forEach(function (customer) {
+     
+      if(newCustomerNip == customer.nip){
+        exist = true;
+      }
+      else{
+        exist = false;
+      }
+    });
+    return exist;
+  }
 }
