@@ -53,11 +53,13 @@
           </div>
       </td>
       <td>
-          <div class="form-group">
-              <input type="text" class="form-control" id="country" required
-              [(ngModel)]="newCustomer.country" name="country"
-              />
-          </div>
+        <div class="form-group">
+          <select name="countries" [(ngModel)]="newCustomer.country" class="form-control" required>
+              <option *ngFor="let country of countries" [ngValue]="country" selected>
+                {{ country }}
+              </option>
+            </select>
+        </div>
       </td>
     </tr>
 

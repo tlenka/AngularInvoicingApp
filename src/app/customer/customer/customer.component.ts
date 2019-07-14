@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { CustomerModel } from '../customer-model';
-import { CUSTOMERS } from '../customer-data';
+import { COUNTRIES } from '../countries-array';
 
 @Component({
   selector: 'app-customer',
@@ -19,6 +19,7 @@ export class CustomerComponent implements OnInit {
 
   //public name: string;
   allCustomers: CustomerModel[];
+  countries: String[];
 
   @Input()
   private newCustomer: CustomerModel = new CustomerModel();
@@ -27,6 +28,7 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit() {
     this.setAllCustomers();
+    this.countries = COUNTRIES;
     
   }
 
